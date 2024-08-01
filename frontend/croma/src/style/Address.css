@@ -1,0 +1,278 @@
+/* Address.css */
+
+.shipping_from_main_box {
+    width: 80%;
+    margin: auto;
+    border-radius: 8px;
+    
+  }
+  
+  .shipping_from_main_heading {
+    margin-bottom: 20px;
+    width: 100%;
+   padding: 1.5rem;
+   border-radius:5px;
+   font-size: 1.3rem;
+   font-weight: 500;
+    background-color: white;
+  }
+  
+  .main_address_from {
+   
+    padding-top: 10px;
+    padding: 20px;
+    border-radius: 8px;
+  background-color: white;
+  }
+  
+  .contact_info {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #0b9967;
+    font-weight: 600;
+  }
+  
+  
+  .from_input_box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+   gap: 2rem;
+
+  }
+  
+  .shipping_input_div {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .shipping_input_div label {
+    display: block;
+    margin-bottom: 2px;
+    font-weight: 400;
+    font-size: 13px;
+  }
+  
+  .shipping_input_div input,
+  .shipping_input_div select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #edf2f1;
+    transition: border-color 0.3s ease; 
+  }
+  
+  .shipping_input_div input:focus,
+  .shipping_input_div select:focus {
+    border:2px solid #0b9967; 
+    outline: none; 
+  }
+  
+  .shipping_input_div select {
+    padding: 10px;
+  }
+  
+  .shipping_input_div .select_input {
+    font-size: 1rem;
+  }
+  
+  .shipping_input_div .firstName,
+  .shipping_input_div .middleName,
+  .shipping_input_div .lastName,
+  .shipping_input_div .email {
+    margin-top: 8px;
+  }
+  
+  .shipping_input_div .phone {
+    margin-top: 8px;
+  }
+
+  .shipping_input_div input::placeholder {
+    color: #888; 
+   font-size: 12px;
+    font-weight: 400;
+}
+  
+/* Address.css */
+
+.shipping-textarea {
+    width: 100%;
+    height: 120px; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical; 
+    box-sizing: border-box; 
+    background-color: #fff; 
+    color: #333; 
+    margin-top: 8px; 
+}
+
+/* Placeholder styling */
+.shipping-textarea::placeholder {
+    color: #888; 
+    font-size: 12px;
+    font-weight: 400;
+}
+.error{
+    font-size: 14px;
+    color:red;
+    font-weight: 400;
+}
+
+
+@media (max-width:850px) {
+  
+.shipping_from_main_box {
+  width: 90%;
+  margin: auto;
+  border-radius: 8px;
+  
+}
+}
+@media (max-width:650px) {
+  
+  .shipping_from_main_box {
+    width: 95%;
+    margin: auto;
+    border-radius: 8px;
+    
+  }
+  }
+
+  @media (max-width:560px) {
+  
+    .shipping_from_main_box {
+      width: 95%;
+      margin: auto;
+      
+      border-radius: 8px;
+      
+    }
+    .from_input_box {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 20px;
+     gap: 2rem;
+  
+    }
+    .shipping_input_div {
+      flex: 1;
+      min-width:100%;
+    }
+    
+    }  
+
+    .payment-form-container {
+      width: 100%;
+      background-color: white;
+      margin-top: 20px;
+      padding: 1rem;
+    }
+    
+ 
+    
+
+
+
+/* Container for the payment form */
+.payment-form-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+/* General form control styling */
+.form-control {
+  margin-bottom: 20px;
+}
+
+.form-control label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-control input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.form-control input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Group for expiry date and CVV */
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-group .form-control {
+  flex: 1;
+  margin: 0;
+}
+
+/* Payment method container */
+.payment-method-container {
+  margin-top: 20px;
+}
+
+.payment-method-container label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 8px;
+}
+
+.radio-group label {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked + label {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.radio-group input[type="radio"]:focus + label {
+  outline: none;
+}
+
+.form-group, .payment-method-container {
+  margin-bottom: 20px;
+}
+
+
+
+
+  
