@@ -76,7 +76,7 @@ router.post("/login", async (req, res) => {
                         username: user.username,
                         gender: user.gender,
                         mobileNumber: user.mobileNumber
-                    }, WT_SECRET);
+                    }, JWT_SECRET);
                     res.status(200).json({ "msg": "Login successfully", "token": token });
                 } else {
                     res.status(401).json({ "msg": "Invalid credentials" });

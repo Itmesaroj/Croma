@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
        
           <App />
        
-      </BrowserRouter>
+      </BrowserRouter> 
     </ChakraProvider>
   </WishlistCartProvider>
   </AuthProvider>

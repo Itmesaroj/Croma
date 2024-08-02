@@ -1,9 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
-
-const cart = new Schema({
-    email:{type:String,required:true},
+const wishListSchema = new mongoose.Schema({
     image: { type: String, required: true },
     title: { type: String, required: true },
     aprice: { type: Number, required: true },
@@ -11,8 +8,8 @@ const cart = new Schema({
     savemoney: { type: String, required: true },
     features: { type: [String], required: true }  ,
     rating:{type:Number,required:true},
-    brand:{type:String,required:true}
+    brand:{type:String,required:true},
+   email:{type:String,required:true}
 });
 
-const WishListModel = mongoose.model("wishlists", cart);
-module.exports = WishListModel;
+module.exports = mongoose.model('wishlists', wishListSchema); 

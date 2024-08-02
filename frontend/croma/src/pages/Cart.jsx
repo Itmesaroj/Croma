@@ -109,7 +109,7 @@ const OrderSubmit = async () => {
     };
 
    
-    const response = await fetch('http://localhost:3000/api/order', {
+    const response = await fetch('https://croma-backend-1.onrender.com/api/order', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

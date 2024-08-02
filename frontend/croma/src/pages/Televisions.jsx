@@ -55,7 +55,7 @@ function Televisions() {
   }
 
   useEffect(() => {
-    fetchData('http://localhost:3000/fetchData/television');
+    fetchData('https://croma-backend-1.onrender.com/fetchData/television');
   }, [skip, searchParams]);
 
   const handleViewMore = () => {

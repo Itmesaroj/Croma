@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useAuth } from '../context/LoginContext';
 import { useWishlistCart } from "../context/wishList";
 import { FaStar } from "react-icons/fa";
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, useDisclosure } from '@chakra-ui/react';
+import { Modal, ModalOverlay, ModalContent,  ModalCloseButton, ModalBody, ModalFooter, Button, useDisclosure } from '@chakra-ui/react';
 import "../style/wishlist.css";
 
 function WishList() {

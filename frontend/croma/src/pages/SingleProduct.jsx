@@ -24,7 +24,7 @@ function SingleProduct() {
     const fetchProduct = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:3000/fetchData/television/${id}`); 
+        const response = await fetch(`https://croma-backend-1.onrender.com/fetchData/television/${id}`); 
         if (!response.ok) {
           const errorResult = await response.json();
           setErrorMsg(errorResult.msg);

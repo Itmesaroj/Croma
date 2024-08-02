@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
   const logout = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:3000/auth/logout',
+        'https://croma-backend-1.onrender.com/auth/logout',
         {},
         {
           headers: {

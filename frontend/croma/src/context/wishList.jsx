@@ -24,7 +24,7 @@ export const WishlistCartProvider = ({ children }) => {
 
   const fetchCartItems = async () => {
     try {
-      const response = await fetchWithToken('http://localhost:3000/api/carts');
+      const response = await fetchWithToken('https://croma-backend-1.onrender.com/api/carts');
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setCartItems(data.data);
@@ -36,9 +36,10 @@ export const WishlistCartProvider = ({ children }) => {
 
   const fetchWishlistItems = async () => {
     try {
-      const response = await fetchWithToken('http://localhost:3000/api/wishlist');
+      const response = await fetchWithToken('https://croma-backend-1.onrender.com/api/wishlist');
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
+      console.log(data)
       setWishlistItems(data.data);
     } catch (error) {
       console.error("Error fetching wishlist items:", error);
@@ -66,7 +67,7 @@ export const WishlistCartProvider = ({ children }) => {
     }
 
     try {
-      const response = await fetchWithToken('http://localhost:3000/api/carts', {
+      const response = await fetchWithToken('https://croma-backend-1.onrender.com/api/carts', {
         method: 'POST',
         body: JSON.stringify(product)
       });
@@ -105,13 +106,17 @@ export const WishlistCartProvider = ({ children }) => {
       });
       return;
     }
-
+  
     try {
-      const response = await fetchWithToken('http://localhost:3000/api/wishlist', {
+      const response = await fetchWithToken('https://croma-backend-1.onrender.com/api/wishlist', {
         method: 'POST',
-        body: JSON.stringify(product)
+        body: JSON.stringify(product),
       });
-      if (!response.ok) throw new Error('Failed to add item to wishlist');
+  
+      const responseData = await response.json();
+      console.log(responseData)
+      if (!response.ok) throw new Error(responseData.msg || 'Failed to add item to wishlist');
+  
       await fetchWishlistItems();
       toast({
         title: 'Item Added',
@@ -122,10 +127,10 @@ export const WishlistCartProvider = ({ children }) => {
         isClosable: true
       });
     } catch (error) {
-      console.error("Error adding item to wishlist:", error);
+      console.error("Error adding item to wishlist:", error.message);
       toast({
         title: 'Error',
-        description: 'Failed to add item to wishlist.',
+        description: `Failed to add item to wishlist. ${error.message}`,
         status: 'error',
         position: 'top-right',
         duration: 2000,
@@ -133,14 +138,15 @@ export const WishlistCartProvider = ({ children }) => {
       });
     }
   };
+  
 
   const removeFromCart = async (id, showToast = true) => {
-    // Optimistically update the UI
+ 
     setCartItems((prevItems) => prevItems.filter(item => item._id !== id));
     setCartItemsCount((prevCount) => prevCount - 1);
   
     try {
-      const response = await fetchWithToken('http://localhost:3000/api/carts', {
+      const response = await fetchWithToken('https://croma-backend-1.onrender.com/api/carts', {
         method: 'DELETE',
         body: JSON.stringify({ id })
       });
@@ -175,7 +181,7 @@ export const WishlistCartProvider = ({ children }) => {
   
   const removeFromWishlist = async (id, showToast = true) => {
     try {
-      const response = await fetchWithToken('http://localhost:3000/api/wishlist', {
+      const response = await fetchWithToken('https://croma-backend-1.onrender.com/api/wishlist', {
         method: 'DELETE',
         body: JSON.stringify({ id })
       });
